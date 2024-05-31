@@ -3,6 +3,8 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { store } from "../store";
+import { Provider } from "react-redux";
 import "react-native-reanimated";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -32,10 +34,12 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={customTheme}>
-      <Stack screenOptions={{ animation: "fade", headerShown: false }}>
-        <Stack.Screen name="index" />
-      </Stack>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider value={customTheme}>
+        <Stack screenOptions={{ animation: "fade", headerShown: false }}>
+          <Stack.Screen name="index" />
+        </Stack>
+      </ThemeProvider>
+    </Provider>
   );
 }
