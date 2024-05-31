@@ -1,4 +1,5 @@
 import { View, TextInput, Text } from "react-native";
+import { Feather } from "@expo/vector-icons";
 
 interface SearchBarProps {
   onChangeText: (text: string) => void;
@@ -11,8 +12,10 @@ const SearchBar = ({ onChangeText }: SearchBarProps) => (
       onChangeText={onChangeText}
       className="bg-white rounded-full pl-14 py-3 shadow shadow-gray-400"
     />
-    <Text className="absolute right-4 top-4">icon</Text>
-    <Text className="absolute left-4 top-4">icon</Text>
+    <View className="absolute left-4 top-3.5">
+      <Feather name="search" size={24} color="black" />
+    </View>
+    <Text className="absolute right-4 top-4">btn</Text>
   </View>
 );
 

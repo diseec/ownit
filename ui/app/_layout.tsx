@@ -34,7 +34,8 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={customTheme}>
       <Stack screenOptions={{ animation: "fade", headerShown: false }}>
-        <Stack.Screen name="index" />
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
   );
