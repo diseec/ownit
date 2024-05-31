@@ -41,7 +41,8 @@ export default function RootLayout() {
     <Provider store={store}>
       <ThemeProvider value={customTheme}>
         <Stack screenOptions={{ animation: "fade", headerShown: false }}>
-          <Stack.Screen name="index" />
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="+not-found" />
         </Stack>
       </ThemeProvider>
     </Provider>
