@@ -1,0 +1,23 @@
+services:
+  uix:
+    command: ["./cli", "dev"]
+    build:
+      context: ./uix
+    volumes:
+      - ./uix:/app
+    ports:
+      - 80:80
+    environment:
+      - API_URL=http://192.168.1.105:81
+
+  # api:
+  #   command: ["./cli", "dev"]
+  #   build:
+  #     context: ./api
+  #   volumes:
+  #     - ./api:/app
+  #   ports:
+  #     - 81:80
+  #   environment:
+  #     - APP_HOST=192.168.1.105
+  #     - ASSETS_URL=http://192.168.1.105:81/

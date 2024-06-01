@@ -1,0 +1,41 @@
+#!/bin/bash
+
+case $1 in
+  install)
+    shift
+    yarn install "$@"
+  ;;
+
+  dev)
+    bash $0 install
+    shift
+    if [[ "$@" != *"--port"* && "$@" != *"-p"* ]]; then
+      set -- "$@" "--port" "80"
+    fi
+    # if [[ "$@" != *"--host"* ]]; then
+    #   set -- "$@" "--host" "lan"
+    # fi
+    yarn expo start --clear "$@"
+  ;;
+  
+  build)
+    shift
+    yarn expo export "$@"
+  ;;
+
+  update)
+    shift
+    eas update "$@"
+  ;;
+  
+  test)
+    shift
+    yarn test "$@"
+  ;;
+  
+  --help|-h)
+    echo "Usage: $0 [install|dev|build|test]"
+    exit 0
+  ;;
+  
+esac
