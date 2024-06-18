@@ -8,6 +8,7 @@ case $1 in
 
   dev)
     yarn install
+    
     shift
     if [[ "$@" != *"--port"* && "$@" != *"-p"* ]]; then
       set -- "$@" "--port" "80"
