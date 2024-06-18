@@ -7,7 +7,7 @@ case $1 in
   ;;
 
   dev)
-    bash $0 install
+    yarn install
     shift
     if [[ "$@" != *"--port"* && "$@" != *"-p"* ]]; then
       set -- "$@" "--port" "80"
@@ -15,7 +15,7 @@ case $1 in
     # if [[ "$@" != *"--host"* ]]; then
     #   set -- "$@" "--host" "lan"
     # fi
-    yarn expo start --clear "$@"
+    npx expo start --clear "$@"
   ;;
   
   build)

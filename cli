@@ -27,7 +27,7 @@ case $command in
     ;;
 
     dev)
-        docker-compose up "$@" --build
+        docker-compose up "$@"
     ;;
 
     pre)
@@ -43,7 +43,7 @@ case $command in
     ;;
 
     help|--help|-h)
-        message "Welcome to Bitabakery CLI"
+        message "Welcome to OwnIt CLI"
         printf "\n"
         color_output 33 "Usage:"
         color_output 0 "    command [options] [arguments]"

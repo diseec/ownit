@@ -8,7 +8,7 @@ services:
     ports:
       - 80:80
     environment:
-      - API_URL=http://192.168.1.105:81
+      - API_URL=http://localhost
 
   # api:
   #   command: ["./cli", "dev"]
@@ -19,5 +19,5 @@ services:
   #   ports:
   #     - 81:80
   #   environment:
-  #     - APP_HOST=192.168.1.105
-  #     - ASSETS_URL=http://192.168.1.105:81/
+  #     - APP_HOST=localhost
+  #     - ASSETS_URL=http://localhost/
