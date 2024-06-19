@@ -6,7 +6,7 @@ import { Text, View } from "@/components/Wrapped";
 
 export default function NotFoundScreen() {
   const pathname = usePathname();
-  Redirect({ href: "/(tabs)/(search)" });
+  // Redirect({ href: "/(tabs)/(search)" });
 
   return (
     <>

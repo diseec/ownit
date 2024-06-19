@@ -1,11 +1,15 @@
 import { View, Image, Text, TouchableOpacity } from "react-native";
-import homeImg from "../assets/images/house.png";
+// import homeImg from "../assets/images/house.png";
 import { Ionicons } from "@expo/vector-icons";
 
 const FeaturedItem = () => (
   <View className="my-2 flex-[3] mb-3.5">
     {/* IMAGE */}
-    <Image source={homeImg} resizeMode="cover" className="w-full h-full rounded-[30px] relative" />
+    <Image
+      // source={homeImg}
+      resizeMode="cover"
+      className="w-full h-full rounded-[30px] relative"
+    />
 
     {/* FAVORITE BUTTON */}
     <TouchableOpacity className="absolute top-3 right-3 bg-white rounded-full w-12 h-12 flex items-center justify-center">
