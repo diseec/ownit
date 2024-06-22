@@ -7,9 +7,11 @@ services:
       - ./uix:/app
     ports:
       - 80:80
+      # - 19000:19000
     environment:
       - API_URL=http://localhost
-
+    stdin_open: true
+    tty: true
   # api:
   #   command: ["./cli", "dev"]
   #   build:
