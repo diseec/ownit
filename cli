@@ -27,7 +27,9 @@ case $command in
     ;;
 
     dev)
-        docker-compose up "$@"
+        docker-compose up -d "$@"
+        # attach terminal to expo-cli
+        docker attach $(docker ps -qf "name=uix")
     ;;
 
     pre)
