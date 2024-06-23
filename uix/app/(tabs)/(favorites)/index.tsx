@@ -28,7 +28,9 @@ export default function TabFavoritesScreen() {
           animationDuration: 300,
         }}
       />
-      <Text style={styles.title}>Tab Favorites</Text>
+      <Text style={styles.title} className=" text-green">
+        Tab Favorites
+      </Text>
       {/* <Text style={styles.title}>{}</Text> */}
       <View
         style={styles.separator}
