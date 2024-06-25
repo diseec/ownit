@@ -1,12 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import HomeDiscoverList from "./components/HomeDiscoverList";
-import HomeFeaturedItem from "./components/HomeFeaturedItem";
-import HomeFilterBar from "./components/HomeFilterBar";
-import HomeSearchBar from "./components/HomeSearchBar";
-
-// K1: i didnt apply the naming convention i leave it you its author!
+import HomeFeaturedItem from "./(home)/components/HomeFeaturedItem/HomeFeaturedItem";
+import HomeFilterBar from "./(home)/components/HomeFilterBar/HomeFilterBar";
+import HomeSearchBar from "./(home)/components/HomeSearchBar/HomeSearchBar";
+import { styles } from "./(home)/components/Home/Home.styles";
+import HomeDiscoverList from "./(home)/components/HomeDiscoverList/HomeDiscoverList";
 
 const items = ["house", "apartment", "townhouse", "duplex", "triplex"];
 
@@ -20,7 +18,7 @@ const HomeScreen = () => {
 
 	return (
 		<SafeAreaProvider>
-			<SafeAreaView className="flex-1 bg-slate-50 px-4 pt-4">
+			<SafeAreaView style={styles.safeAreaProvider}>
 				<HomeSearchBar onChangeText={searchHandler} />
 				<HomeFilterBar items={items} activeItem={activeItem} setActiveItem={setActiveItem} />
 				<HomeFeaturedItem />

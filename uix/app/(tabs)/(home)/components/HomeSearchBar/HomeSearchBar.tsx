@@ -1,22 +1,23 @@
 import React from "react";
 import { View, TextInput, Text } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { styles } from "./HomeSearchBar.styles";
 
 interface HomeSearchBarProps {
 	onChangeText: (text: string) => void;
 }
 
 const HomeSearchBar = ({ onChangeText }: HomeSearchBarProps) => (
-	<View className="relative my-4">
+	<View style={styles.container}>
 		<TextInput
 			placeholder="Search house, apartment..."
 			onChangeText={onChangeText}
-			className="bg-white rounded-full pl-14 py-3 shadow shadow-gray-400"
+			style={styles.input}
 		/>
-		<View className="absolute left-4 top-3.5">
+		<View style={styles.searchIcon}>
 			<Feather name="search" size={24} color="black" />
 		</View>
-		<Text className="absolute right-4 top-4">btn</Text>
+		<Text style={styles.buttonText}>btn</Text>
 	</View>
 );
 

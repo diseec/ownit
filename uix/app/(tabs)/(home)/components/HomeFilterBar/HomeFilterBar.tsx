@@ -1,5 +1,6 @@
 import React from "react";
-import { ScrollView, TouchableOpacity, Text } from "react-native";
+import { ScrollView, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { styles } from "./HomeFilterBar.styles";
 
 interface HomeFilterBarProps {
 	items: string[];
@@ -8,18 +9,14 @@ interface HomeFilterBarProps {
 }
 
 const HomeFilterBar = ({ items, activeItem, setActiveItem }: HomeFilterBarProps) => (
-	<ScrollView horizontal className="flex-row flex-[0.5] space-x-2 pb-1">
+	<ScrollView horizontal style={styles.scrollView}>
 		{items.map((item, index) => (
 			<TouchableOpacity
 				key={index}
 				onPress={() => setActiveItem(item)}
-				className={`px-4 h-10 justify-center rounded-full ${
-					activeItem === item ? "bg-slate-800" : "bg-white"
-				}`}
+				style={[styles.item, activeItem === item ? styles.itemActive : styles.itemInactive]}
 			>
-				<Text className={`capitalize ${activeItem === item ? "text-white" : "text-gray-400"}`}>
-					{item}
-				</Text>
+				<Text style={activeItem === item ? styles.textActive : styles.textInactive}>{item}</Text>
 			</TouchableOpacity>
 		))}
 	</ScrollView>
